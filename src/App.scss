@@ -1,0 +1,136 @@
+$primary: #387adf;
+.App {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #eee;
+
+  .container {
+    width: 600px;
+    height: auto;
+    border-radius: 10px;
+    border: 1px solid $primary;
+    background-color: #fff;
+    overflow: hidden;
+
+    .header {
+      padding: 16px 24px;
+      background-color: $primary;
+      color: #fff;
+      font-size: 20px;
+      font-weight: 500;
+    }
+
+    .body {
+      padding: 16px 24px;
+
+      .question {
+        padding: 10px;
+        margin-bottom: 8px;
+        border-radius: 5px;
+        border: 1px solid $primary;
+        background-color: #eef;
+
+        position: relative;
+        &:last-child {
+          margin-bottom: 0;
+        }
+
+        span {
+          position: absolute;
+          top: 14px;
+          left: 0;
+          padding: 0 4px;
+          font-size: 14px;
+          background-color: $primary;
+          color: white;
+          border-radius: 0 2px 2px 0;
+        }
+
+        p {
+          margin: 0;
+          padding: 0 0 8px 8px;
+        }
+
+        .options {
+          display: flex;
+          justify-content: space-evenly;
+
+          button {
+            padding: 6px 12px;
+            outline: none;
+            background-color: #fff;
+            border-radius: 3px;
+            border: 1px solid $primary;
+            color: $primary;
+            cursor: pointer;
+            font-weight: 500;
+            transition: 200ms ease-in-out;
+
+            &:hover {
+              background-color: $primary;
+              color: #fff;
+            }
+            &:disabled {
+              border-color: #aaa;
+              color: #aaa;
+              background-color: #fff;
+              cursor: not-allowed;
+            }
+
+            @keyframes select {
+              0% {
+                background-color: $primary;
+              }
+              10% {
+                background-color: #fff;
+              }
+            }
+
+            &.selected {
+              border: 1px solid $primary;
+              background-color: $primary;
+              color: #fff;
+              cursor: pointer;
+              animation-name: select;
+              animation-duration: 1s;
+            }
+          }
+        }
+      }
+
+      .result {
+        text-align: center;
+        margin-bottom: 50px;
+
+        h1 {
+          color: $primary;
+          font-size: 36px;
+          font-weight: 450;
+        }
+        h2 {
+          font-weight: 500;
+        }
+        button {
+          padding: 10px 16px;
+          margin: 20px 0;
+          outline: none;
+          background-color: #fff;
+          border-radius: 3px;
+          border: 1.5px solid $primary;
+          color: $primary;
+          cursor: pointer;
+          font-weight: 600;
+          transition: 200ms ease-in-out;
+
+          &:hover {
+            background-color: $primary;
+            color: #fff;
+          }
+        }
+      }
+    }
+  }
+}
